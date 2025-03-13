@@ -18,8 +18,7 @@
     />
    @vite('resources/scss/app.scss')
   </head>
-  <!--end::Head-->
-  <!--begin::Body-->
+  @vite('resources/scss/app.scss')
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
