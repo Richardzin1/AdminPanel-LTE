@@ -14,20 +14,29 @@
       <form action="{{ 'register' }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input name="name" type="text" class="form-control" placeholder="Full Name" />
           <div class="input-group-text"><span class="bi bi-person"></span></div>
+          <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Full Name" />
+          @error('name')
+          <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
         </div>
         <div class="input-group mb-3">
-          <input name="email" type="email" class="form-control" placeholder="Email" />
           <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+          <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" />
+          @error('email')
+          <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
         </div>
         <div class="input-group mb-3">
-          <input name="password" type="password" class="form-control" placeholder="Password" />
           <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+          <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" />
+          @error('password')
+          <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
         </div>      
         <div class="input-group mb-3">
-          <input name="password_confirmation" type="password" class="form-control" placeholder="Password Cofirmation" />
           <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+          <input name="password_confirmation" type="password" class="form-control" placeholder="Password Cofirmation" />
         </div>      
            <div class="d-grid gap-2">
               <button type="submit" class="btn btn-primary">Register</button>
