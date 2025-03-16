@@ -15,14 +15,14 @@
         @csrf
         <div class="input-group mb-3">
           <div class="input-group-text"><span class="bi bi-person"></span></div>
-          <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Full Name" />
+          <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Full Name" value="{{ old('name') }}"  />
           @error('name')
           <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                @enderror 
         </div>
         <div class="input-group mb-3">
           <div class="input-group-text"><span class="bi bi-envelope"></span></div>
-          <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" />
+          <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}"  />
           @error('email')
           <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

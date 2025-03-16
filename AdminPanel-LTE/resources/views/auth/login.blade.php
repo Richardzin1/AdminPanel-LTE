@@ -13,7 +13,7 @@
             @csrf
           <div class="input-group mb-3">
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
-            <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" />
+            <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}" />
             @error('email')
     <div class="invalid-feedback">{{ $message }}</div>
           @enderror
@@ -36,7 +36,7 @@
           </div>
           <!--end::Row-->
         </form>
-        <p class="mb-1 text-center"><a href="forgot-password.html">I forgot my password</a></p>
+        <p class="mb-1 text-center"><a href="forgot-password">I forgot my password</a></p>
         <p class="mb-0 text-center">
           <a href="register.html" class="text-center"> Register a new membership </a>
         </p>
