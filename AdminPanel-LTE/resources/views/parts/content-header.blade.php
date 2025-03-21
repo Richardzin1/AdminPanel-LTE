@@ -1,17 +1,28 @@
 <div class="app-content-header">
-    <!--begin::Container-->
-    <div class="container-fluid">
-      <!--begin::Row-->
-      <div class="row">
-        <div class="col-sm-6"><h3 class="mb-0">Dashboard</h3></div>
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-end">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-          </ol>
-        </div>
+  <div class="container-fluid">
+    <!--begin::Row-->
+    <div class="row">
+      <div class="col-sm-6">
+          @hasSection('page-title')
+          <h3 class="mb-0">@yield('page-title')</h3>
+          @endif
+
+          @isset($breadcrumbs)
+
+          <ol class="breadcrumb">
+              @foreach ( $breadcrumbs as $breadcrumb )
+              <li class="breadcrumb-item">
+                  <a href="#">{{ $breadcrumb['label'] }}</a>
+              </li>
+              @endforeach ()
+            </ol>   
+          @endisset
       </div>
-      <!--end::Row-->
+
+      <div class="col-sm-6">
+        Actions
+      </div>
     </div>
-    <!--end::Container-->
+    <!--end::Row-->
   </div>
+</div>

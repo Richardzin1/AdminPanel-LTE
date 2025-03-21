@@ -5,12 +5,20 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-      <a href="../index2.html"><b>Admin</b>LTE</a>
+      <a href="{{ route('login') }}"><b>Admin</b>LTE</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Reset Password</p>
+
+        @session('status')
+        <div class="alert alert-success" role="alert">
+          {{ $value }}
+        </div>
+         
+        @endsession
+
         <form action="{{ route('password.email') }}" method="post">
             @csrf
 
@@ -28,7 +36,7 @@
         </form>
         <div class="mt-2 text-center">
         <p class="mb-0">
-          <a href="login" class="text-center"> Back to login </a>
+          <a href="{{ route('login') }}" class="text-center"> Back to login </a>
         </p>
        </div>
       </div>
