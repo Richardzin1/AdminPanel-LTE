@@ -23,7 +23,7 @@ class UserController extends Controller
     public function store(Request $request){
       $input = $request->validate([
         'name' => 'required',
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users,email',
         'password' => 'required|min:8'
       ]);
 
@@ -31,5 +31,21 @@ class UserController extends Controller
       return redirect()
       ->route('users.index')
       ->with('status', 'User create with success');
+    }
+
+    public function edit(User $user){
+    return view('users.edit', compact('user'));
+    }
+    public function update(Request $request, User $user){
+      $input = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|',
+        'password' => 'exclude_if:password,null|min:8'
+      ]);
+      $user->fill($input);
+      $user->save();
+      return redirect()
+      ->route('users.index')
+      ->with('status', 'Usuário editado com sucesso');
     }
 }

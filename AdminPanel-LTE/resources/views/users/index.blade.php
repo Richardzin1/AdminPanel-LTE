@@ -2,7 +2,7 @@
 
 @section('page-title', 'Usuários')
 @section('page-actions')
-<a href="" class="btn btn-primary">Adicionar</a>
+<a href="{{ route('users.create') }}" class="btn btn-primary">Adicionar</a>
 @endsection
 @section('content')
 @session('status')
@@ -24,7 +24,7 @@
           <td>{{ $user->name }}</td>
           <td>{{ $user->email }}</td>
           <td>
-            <a href="" class="btn btn-primary btn-sm">Editar</a>
+            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">Editar</a>
             <a href="" class="btn btn-danger btn-sm">Excluir</a>
           </td>
         </tr>      
