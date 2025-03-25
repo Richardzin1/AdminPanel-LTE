@@ -5,6 +5,9 @@
 <a href="" class="btn btn-primary">Adicionar</a>
 @endsection
 @section('content')
+@session('status')
+<div class="alert alert-success">{{ $value }}</div>
+@endsession
 <table class="table">
     <thead>
       <tr>
