@@ -1,5 +1,5 @@
-@extends('layouts.default');
-@section('page-title', 'Editar Usuário' );
+@extends('layouts.default')
+@section('page-title', 'Editar Usuário' )
 @section('content')
 <form action="" method="POST">
     @csrf

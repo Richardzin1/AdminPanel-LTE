@@ -1,5 +1,5 @@
-@extends('layouts.default');
-@section('page-title', 'Adicionar Usuário' );
+@extends('layouts.default')
+@section('page-title', 'Adicionar Usuário' )
 @section('content')
 @session('status')
   <div class="alert alert-success">
@@ -32,6 +32,6 @@
           <div class="invalid-feedback">{{ $message }}</div>
       @enderror
     </div>
-    <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="submit" class="btn btn-primary">Confirma</button>
   </form>
 @endsection

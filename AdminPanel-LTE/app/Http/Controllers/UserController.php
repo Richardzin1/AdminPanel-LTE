@@ -36,6 +36,7 @@ class UserController extends Controller
     public function edit(User $user){
     return view('users.edit', compact('user'));
     }
+
     public function update(Request $request, User $user){
       $input = $request->validate([
         'name' => 'required',
@@ -47,5 +48,11 @@ class UserController extends Controller
       return redirect()
       ->route('users.index')
       ->with('status', 'Usuário editado com sucesso');
+    }
+
+    public function destroy(User $user){
+      $user->delete();
+      return back()
+      ->with('status', 'Usuário deletado com sucesso', compact('user'));
     }
 }
