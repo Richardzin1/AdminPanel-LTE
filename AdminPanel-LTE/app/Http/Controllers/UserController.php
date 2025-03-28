@@ -50,9 +50,19 @@ class UserController extends Controller
       ->with('status', 'Usuário editado com sucesso');
     }
 
+    
+    public function updateProfile( request $request, User $user ){
+       $input = $request->validate([
+        'type' => 'required',
+        'address' => 'nullable'
+       ]);
+
+}
+
     public function destroy(User $user){
       $user->delete();
       return back()
       ->with('status', 'Usuário deletado com sucesso', compact('user'));
     }
+
 }
